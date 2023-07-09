@@ -1,5 +1,8 @@
 # Changelog
 
+`2023-07-09` - `0.0.7`
+- Added `getAttachmentFile`
+
 `2023-07-09` - `0.0.6`
 - Fix `getListItems` not parsing data
 

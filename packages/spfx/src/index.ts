@@ -18,6 +18,7 @@ export { getPerson } from "./getPerson";
 export { getPersonArray } from "./getPersonArray";
 export { getPageName } from "./getPageName";
 export { getPageLanguage } from "./getPageLanguage";
+export { getAttachmentFile } from "./getAttachmentFile";
 
 export { toPerson } from "./toPerson";
 export { toPersonArray } from "./toPersonArray";
@@ -48,4 +49,5 @@ export type { RemoveListItemOptions, RemoveListItemResult } from "./removeListIt
 export type { AttachToListItemOptions, AttachToListItemFile, AttachToFileResult } from "./attachToListItem";
 export type { GetListItemBaseOptions, GetListItemByIDOptions, GetListItemByPointerOptions, GetListItemResult } from "./getListItem";
 export type { GetListItemsOptions, GetListItemsResult } from "./getListItems";
+export type { GetAttachmentFileResult } from "./getAttachmentFile";
 export type { SendEmailOptions } from "./sendEmail";
