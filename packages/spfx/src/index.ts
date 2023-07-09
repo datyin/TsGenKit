@@ -16,6 +16,8 @@ export { cleanPayload } from "./cleanPayload";
 export { errorMessage } from "./errorMessage";
 export { getPerson } from "./getPerson";
 export { getPersonArray } from "./getPersonArray";
+export { getPageName } from "./getPageName";
+export { getPageLanguage } from "./getPageLanguage";
 
 export { toPerson } from "./toPerson";
 export { toPersonArray } from "./toPersonArray";
