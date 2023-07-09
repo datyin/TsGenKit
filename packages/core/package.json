@@ -1,8 +1,5 @@
 {
   "$schema": "https://json.schemastore.org/package",
-  "publishConfig": {
-    "access": "public"
-  },
   "name": "@datyin/core",
   "description": "Core types and utilities",
   "version": "0.0.1",
@@ -33,5 +30,8 @@
     "build": "pnpm run typecheck && pnpm run test && vite build && pnpm run types",
     "prepublish": "pnpm run build",
     "typedoc": "typedoc --options typedoc.json"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

@@ -24,5 +24,8 @@
   "scripts": {
     "test": "vitest .",
     "dev": "vite build"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

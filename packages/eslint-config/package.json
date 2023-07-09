@@ -39,5 +39,8 @@
     "dev": "vite build --mode development",
     "build": "vite build",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx,.json,.jsonc,.json5 ."
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
