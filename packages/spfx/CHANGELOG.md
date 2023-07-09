@@ -1,5 +1,8 @@
 # Changelog
 
+`2023-07-09` - `0.0.6`
+- Fix `getListItems` not parsing data
+
 `2023-07-09` - `0.0.5`
 - Flagged `filter` option in `getListItems` as optional
 

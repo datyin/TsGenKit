@@ -27,14 +27,14 @@ async function getListItems<T = Record<string, any>>(options: GetListItemsOption
       expand.push("AttachmentFiles");
     }
 
-    const data = await list.items.filter(filter).select(...select).expand(...expand).getAll();
-    const output: T[] = [];
+    const rows = await list.items.filter(filter).select(...select).expand(...expand).getAll();
+    const data: T[] = [];
 
-    for (const item of data) {
+    for (const item of rows) {
       const parsed = options.parser != null ? options.parser(item) : item;
 
       if (parsed != null) {
-        output.push(parsed);
+        data.push(parsed);
       }
     }
 
