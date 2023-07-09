@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json.schemastore.org/package",
+  "name": "@datyin/vite-plugin-execute",
+  "version": "0.0.1",
+  "description": "A vite plugin to execute shell command",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "dts": "tsc",
+    "build": "vite build && pnpm run dts",
+    "prepublish": "pnpm run build"
+  },
+  "author": {
+    "name": "Jove Jonovski",
+    "email": "jovejonovski@gmail.com",
+    "url": "https://github.com/datyin"
+  },
+  "keywords": [
+    "vite",
+    "plugin",
+    "vite-plugin",
+    "execute",
+    "shell",
+    "electron"
+  ],
+  "dependencies": {
+    "@types/node": "^20.3.3",
+    "vite": "^4.3.9"
+  }
+}

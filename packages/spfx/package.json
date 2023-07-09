@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json.schemastore.org/package",
+  "name": "@datyin/spfx",
+  "version": "0.0.1",
+  "description": "SPFx wrappers",
+  "dependencies": {
+    "@datyin/core": "workspace:^",
+    "@microsoft/sp-webpart-base": "^1.17.4",
+    "@pnp/queryable": "^3.16.0",
+    "@pnp/sp": "^3.16.0"
+  },
+  "scripts": {
+    "test": "vitest ."
+  }
+}

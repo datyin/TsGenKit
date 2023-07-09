@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json.schemastore.org/package",
+  "name": "@datyin/core",
+  "description": "Core types and utilities",
+  "version": "0.0.1",
+  "type": "module",
+  "main": "./dist/index.umd.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.umd.cjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "author": {
+    "name": "Jove Jonovski",
+    "email": "jovejonovski@gmail.com",
+    "url": "https://github.com/datyin"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "types": "tsc --emitDeclarationOnly --declaration --declarationDir dist",
+    "test": "vitest . --watch=false",
+    "build": "pnpm run typecheck && pnpm run test && vite build && pnpm run types",
+    "prepublish": "pnpm run build",
+    "typedoc": "typedoc --options typedoc.json"
+  }
+}

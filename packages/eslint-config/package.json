@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json.schemastore.org/package",
+  "name": "@datyin/eslint-config",
+  "version": "1.0.0",
+  "description": "ESLint config for JavaScript projects",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "eslint",
+    "eslintconfig",
+    "eslint-config",
+    "formatter"
+  ],
+  "dependencies": {
+    "@babel/core": "^7.22.8",
+    "@babel/eslint-parser": "^7.22.7",
+    "@babel/preset-env": "^7.22.7",
+    "eslint": "^8.44.0",
+    "eslint-plugin-html": "^7.1.0",
+    "eslint-plugin-jsonc": "^2.9.0",
+    "eslint-plugin-unicorn": "^47.0.0"
+  },
+  "devDependencies": {
+    "@types/eslint": "^8.40.2"
+  },
+  "scripts": {
+    "dev": "vite build --mode development",
+    "build": "vite build",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx,.json,.jsonc,.json5 ."
+  }
+}

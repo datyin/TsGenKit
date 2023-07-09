@@ -1,0 +1,16 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "extends": [
+    "../../typedoc.base.json"
+  ],
+  "entryPoints": [
+    "src/index.ts"
+  ],
+  "exclude": [
+    "./node_modules",
+    "./dist",
+    "./src/**/*.spec.ts",
+    "./src/**/*.test.ts",
+    "./src/**/examples/**/*",
+  ]
+}

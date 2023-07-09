@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json.schemastore.org/package",
+  "name": "@datyin/emitter",
+  "version": "1.0.0",
+  "description": "A simple event emitter",
+  "type": "module",
+  "main": "dist/index.umd.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.umd.cjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "types": "tsc --emitDeclarationOnly --declaration --declarationDir dist",
+    "build": "pnpm run typecheck && vite build && pnpm run types",
+    "prepublishOnly": "pnpm run build"
+  }
+}
