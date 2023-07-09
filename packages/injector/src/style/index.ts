@@ -24,11 +24,11 @@ import { toString } from "@datyin/core";
  */
 function injectStyle(id: string, css: string[]) {
   const name = toString(id).trim() || "injected-styles";
-  const alreadyHooked = document.querySelector(`style[data-css-injection="${name}"]`);
+  const alreadyHooked = document.querySelector(`style[data-xcss="${name}"]`);
 
   if (alreadyHooked == null) {
     const element = document.createElement("style");
-    element.dataset["data-css-injection"] = name;
+    element.dataset["data-xcss"] = name;
     element.innerHTML = css.join("\n");
   
     document.head.append(element);
@@ -43,11 +43,11 @@ function injectStyle(id: string, css: string[]) {
  */
 function appendInjectStyle(id: string, css: string[]) {
   const name = toString(id).trim() || "injected-styles";
-  const alreadyHooked = document.querySelector(`style[data-css-injection="${name}"]`);
+  const alreadyHooked = document.querySelector(`style[data-xcss="${name}"]`);
 
   if (alreadyHooked == null) {
     const element = document.createElement("style");
-    element.dataset["data-css-injection"] = name;
+    element.dataset["data-xcss"] = name;
     element.innerHTML = css.join("\n");
 
     document.head.append(element);
@@ -71,7 +71,7 @@ function appendInjectStyle(id: string, css: string[]) {
  */
 function uninjectStyle(id: string) {
   const name = toString(id).trim() || "injected-styles";
-  const alreadyHooked = document.querySelector(`style[data-css-injection="${name}"]`);
+  const alreadyHooked = document.querySelector(`style[data-xcss="${name}"]`);
 
   if (alreadyHooked != null) {
     alreadyHooked.remove();

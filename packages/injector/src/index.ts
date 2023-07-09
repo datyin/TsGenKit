@@ -1,1 +1,1 @@
-export { injectStyle, uninjectStyle } from "./style";
+export { injectStyle, appendInjectStyle, uninjectStyle } from "./style";
