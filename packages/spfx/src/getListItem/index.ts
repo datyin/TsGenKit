@@ -39,7 +39,8 @@ async function getListItem<T = Record<string, any>>(options: GetListItemByIDOpti
     const select = getStringArray(options.select);
     const expand = getStringArray(options.expand);
 
-    if (!expand.includes("EncodedAbsUrl")) expand.push("EncodedAbsUrl");
+    if (select.length === 0) select.push("*");
+    if (!select.includes("EncodedAbsUrl")) select.push("EncodedAbsUrl");
     if (!expand.includes("AttachmentFiles")) expand.push("AttachmentFiles");
 
     const data = await item.select(...select).expand(...expand)();
