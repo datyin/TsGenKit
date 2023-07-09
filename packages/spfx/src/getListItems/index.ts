@@ -4,7 +4,7 @@ import type { IList } from "@pnp/sp/lists";
 
 interface GetListItemsOptions {
   list: IList | string;
-  filter: string;
+  filter?: string;
   select?: string[];
   expand?: string[];
   parser?: (item: any) => any;
