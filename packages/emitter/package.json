@@ -1,7 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/package",
   "name": "@datyin/emitter",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "A simple event emitter",
   "type": "module",
   "main": "dist/index.umd.cjs",
@@ -18,10 +18,15 @@
   "files": [
     "dist"
   ],
+  "author": {
+    "name": "Jove Jonovski",
+    "email": "jovejonovski@gmail.com",
+    "url": "https://github.com/datyin"
+  },
   "scripts": {
     "typecheck": "tsc --noEmit",
     "types": "tsc --emitDeclarationOnly --declaration --declarationDir dist",
     "build": "pnpm run typecheck && vite build && pnpm run types",
-    "prepublishOnly": "pnpm run build"
+    "prepublish": "pnpm run build"
   }
 }
