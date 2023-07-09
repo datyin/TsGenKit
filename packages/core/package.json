@@ -1,5 +1,8 @@
 {
   "$schema": "https://json.schemastore.org/package",
+  "publishConfig": {
+    "access": "public"
+  },
   "name": "@datyin/core",
   "description": "Core types and utilities",
   "version": "0.0.1",
