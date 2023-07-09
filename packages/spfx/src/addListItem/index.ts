@@ -8,9 +8,21 @@ interface AddListItemOptions {
   list: IList | string;
   payload: Record<string, any>;
   files?: AttachToListItemFile[]
-}
+};
 
-async function addListItem(options: AddListItemOptions): Promise<{ item: IItem | undefined; attachments: IAttachmentInfo[], error?: string; }> {
+interface AddListItemResult {
+  item: IItem | undefined;
+  attachments: IAttachmentInfo[];
+  error?: string;
+};
+
+/**
+ * Add item to list.
+ *
+ * @param options 
+ * @returns item, attachments, error
+ */
+async function addListItem(options: AddListItemOptions): Promise<AddListItemResult> {
   try {
     const list = getList(options.list);
     const payload = cleanPayload(options.payload);
@@ -31,4 +43,4 @@ async function addListItem(options: AddListItemOptions): Promise<{ item: IItem |
 }
 
 export { addListItem };
-export type { AddListItemOptions };
+export type { AddListItemOptions, AddListItemResult };

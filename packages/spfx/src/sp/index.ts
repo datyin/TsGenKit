@@ -2,6 +2,7 @@ import type { WebPartContext } from "@microsoft/sp-webpart-base";
 import { type SPFI, SPFx, spfi } from "@pnp/sp";
 
 let _spfx: SPFI | undefined = undefined;
+let _context: WebPartContext | undefined = undefined;
 
 /**
  * Get pnp instance of SPFx
@@ -38,11 +39,17 @@ function getSP(context: WebPartContext | undefined = undefined): SPFI {
   }
 
   if (context != null) {
+    _context = context;
     _spfx = spfi().using(SPFx(context));
+
     return _spfx;
   }
 
   return spfi();
 }
 
-export { getSP };
+function getContext(): WebPartContext | undefined {
+  return _context;
+}
+
+export { getSP, getContext };

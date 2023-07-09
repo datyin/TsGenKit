@@ -43,7 +43,6 @@ async function getListItem<T = Record<string, any>>(options: GetListItemByIDOpti
       expand.push("AttachmentFiles");
     }
 
-
     const data = await item.select(...select).expand(...expand)();
 
     if (options.parser != null) {

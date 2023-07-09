@@ -12,7 +12,13 @@ interface UpdateListItemOptions {
   files: AttachToListItemFile[]
 }
 
-async function updateListItem(options: UpdateListItemOptions): Promise<{ item: IItem; attachments: IAttachmentInfo[]; error?: string; }> {
+interface UpdateListItemResult {
+  item: IItem | undefined;
+  attachments: IAttachmentInfo[];
+  error?: string;
+};
+
+async function updateListItem(options: UpdateListItemOptions): Promise<UpdateListItemResult> {
   try {
     // Get the list and payload.
     const list = getList(options.list);
@@ -39,4 +45,4 @@ async function updateListItem(options: UpdateListItemOptions): Promise<{ item: I
 }
 
 export { updateListItem };
-export type { UpdateListItemOptions };
+export type { UpdateListItemOptions, UpdateListItemResult };

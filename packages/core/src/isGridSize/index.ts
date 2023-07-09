@@ -1,3 +1,5 @@
+import { isInteger } from "../index";
+
 /**
  * Size of a grid column.
  * Number between 1 and 24.
@@ -20,7 +22,7 @@ type GridSize = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 
  * ```
  */
 function isGridSize(input: unknown): input is GridSize {
-  return typeof input === 'number' && input >= 1 && input <= 12;
+  return isInteger(input) && input >= 1 && input <= 12;
 }
 
 export { isGridSize };

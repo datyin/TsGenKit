@@ -3,14 +3,39 @@
   "name": "@datyin/spfx",
   "version": "0.0.1",
   "description": "SPFx wrappers",
+  "type": "module",
+  "main": "./dist/index.umd.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.umd.cjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "author": {
+    "name": "Jove Jonovski",
+    "email": "jovejonovski@gmail.com",
+    "url": "https://github.com/datyin"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "types": "tsc --emitDeclarationOnly --declaration --declarationDir dist",
+    "test": "vitest . --watch=false",
+    "build": "pnpm run typecheck && vite build && pnpm run types",
+    "prepublish": "pnpm run build",
+    "typedoc": "typedoc --options typedoc.json"
+  },
   "dependencies": {
     "@datyin/core": "workspace:^",
     "@microsoft/sp-webpart-base": "^1.17.4",
     "@pnp/queryable": "^3.16.0",
     "@pnp/sp": "^3.16.0"
-  },
-  "scripts": {
-    "test": "vitest ."
   },
   "publishConfig": {
     "access": "public"

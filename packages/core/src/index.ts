@@ -13,6 +13,7 @@ export { getEmail } from "./getEmail";
 export { getEmailArray } from "./getEmailArray";
 export { getInteger } from "./getInteger";
 export { getIntegerArray } from "./getIntegerArray";
+export { getMap } from "./getMap";
 export { getNumberMinMax } from "./getNumberMinMax";
 export { getNumber } from "./getNumber";
 export { getNumberArray } from "./getNumberArray";
@@ -28,6 +29,7 @@ export { getValueOf } from "./getValueOf";
 export { toBoolean } from "./toBoolean";
 export { toNumber } from "./toNumber";
 export { toString } from "./toString";
+export { toYesNo } from "./toYesNo";
 
 // Type Checks
 export { isArray } from "./isArray";
@@ -94,12 +96,14 @@ export type { GetArrayOptions } from "./getArray";
 export type { GetDateOptions } from "./getDate";
 export type { GetEmailOptions } from "./getEmail";
 export type { GetIntegerOptions } from "./getInteger";
+export type { GetMapOptions } from "./getMap";
 export type { GetNumberOptions } from "./getNumber";
 export type { GetObjectOptions } from "./getObject";
 
 export type { ToBooleanOptions } from "./toBoolean";
 export type { ToNumberOptions } from "./toNumber";
 export type { ToStringOptions } from "./toString";
+export type { ToYesNoOptions } from "./toYesNo";
 
 export type { Primitive, Scalars } from "./typePrimitive";
 export type { UserInput } from "./typeUserInput";
