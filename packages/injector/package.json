@@ -27,7 +27,7 @@
     "typecheck": "tsc --noEmit",
     "types": "tsc --emitDeclarationOnly --declaration --declarationDir dist",
     "test": "vitest . --watch=false",
-    "build": "pnpm run typecheck && pnpm run test && vite build && pnpm run types",
+    "build": "pnpm run typecheck && vite build && pnpm run types",
     "prepublish": "pnpm run build",
     "typedoc": "typedoc --options typedoc.json"
   },
