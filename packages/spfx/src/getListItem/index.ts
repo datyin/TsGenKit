@@ -46,7 +46,7 @@ async function getListItem<T = Record<string, any>>(options: GetListItemByIDOpti
     const data = await item.select(...select).expand(...expand)();
 
     if (options.parser != null) {
-      return { item, data: options.parser(item) };
+      return { item, data: options.parser(data) };
     }
 
     return { item, data };

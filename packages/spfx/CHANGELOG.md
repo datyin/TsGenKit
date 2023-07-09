@@ -1,5 +1,8 @@
 # Changelog
 
+`2023-07-09` - `0.0.10`
+- Fixed `getListItem` not parsing data
+
 `2023-07-09` - `0.0.9`
 - Improvements in `getListItem` & `getListItems`
 
