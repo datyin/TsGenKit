@@ -12,7 +12,20 @@ export default defineConfig(() => {
         fileName: "index",
         formats: ["es", "umd"],
         name: pkg.name
+      },
+      rollupOptions: {
+        external: [
+          "@datyin/core"
+        ],
+        output: {
+          globals: {
+            "@datyin/core": "@datyin/core"
+          }
+        }
       }
-    }
+    },
+    esbuild: {
+      drop: ["debugger"]
+    },
   };
 });
