@@ -1,5 +1,8 @@
 # Changelog
 
+`2023-07-09` - `0.0.8`
+- Improvements in `getListItem` & `getListItems`
+
 `2023-07-09` - `0.0.7`
 - Added `isAttachment`
 - Added `getAttachmentFile`

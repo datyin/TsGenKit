@@ -1,4 +1,4 @@
-import { toString } from "@datyin/core";
+import { getString } from "@datyin/core";
 import type { HttpRequestError } from "@pnp/queryable";
 
 /**
@@ -14,19 +14,19 @@ async function errorMessage(input: unknown): Promise<string> {
 
     // if we have a value property we can show it
     if (typeof json["odata.error"] === "object") {
-      return toString(json["odata.error"]?.message?.value);
+      return getString(json["odata.error"]?.message?.value);
     }
     else if (input && typeof input === "object" && "message" in input) {
-      return toString(input.message);
+      return getString(input.message);
     }
 
     // add of course you have access to the other properties and can make choices on how to act
     if ((input as HttpRequestError).status === 404) {
-      return toString((input as HttpRequestError).statusText);
+      return getString((input as HttpRequestError).statusText);
     }
   }
 
-  return input != null && typeof input === "object" && "message" in input ? toString(input.message) : "Unknown error";
+  return input != null && typeof input === "object" && "message" in input ? getString(input.message) : "Unknown error";
 }
 
 export { errorMessage };

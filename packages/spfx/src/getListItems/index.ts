@@ -23,9 +23,8 @@ async function getListItems<T = Record<string, any>>(options: GetListItemsOption
     const select = getStringArray(options.select);
     const expand = getStringArray(options.expand);
 
-    if (expand.length === 0) {
-      expand.push("AttachmentFiles");
-    }
+    if (!expand.includes("EncodedAbsUrl")) expand.push("EncodedAbsUrl");
+    if (!expand.includes("AttachmentFiles")) expand.push("AttachmentFiles");
 
     const rows = await list.items.filter(filter).select(...select).expand(...expand).getAll();
     const data: T[] = [];
