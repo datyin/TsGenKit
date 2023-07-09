@@ -1,12 +1,13 @@
-import { getString, isObject } from "@datyin/core";
+import { getString } from "@datyin/core";
+import { isAttachment } from "../index";
 
-interface GetAttachmentFileResult {
+interface Attachment {
   FileName: string;
   ServerRelativeUrl: string;
 };
 
-function getAttachmentFile(input: unknown): GetAttachmentFileResult | undefined {
-  if (!isObject(input)) {
+function getAttachmentFile(input: unknown): Attachment | undefined {
+  if (!isAttachment(input)) {
     return undefined;
   }
 
@@ -17,4 +18,4 @@ function getAttachmentFile(input: unknown): GetAttachmentFileResult | undefined 
 }
 
 export { getAttachmentFile };
-export type { GetAttachmentFileResult };
+export type { Attachment };
