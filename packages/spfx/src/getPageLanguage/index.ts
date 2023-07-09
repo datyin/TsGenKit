@@ -3,7 +3,7 @@ import { getContext } from "../index";
 
 function getPageLanguage() {
   const context = getContext();
-  return getString(context?.pageContext?.cultureInfo.currentUICultureName).toLowerCase();
+  return getString(context?.pageContext?.cultureInfo?.currentUICultureName);
 }
 
 export { getPageLanguage };
