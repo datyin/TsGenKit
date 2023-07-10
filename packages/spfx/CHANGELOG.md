@@ -1,5 +1,10 @@
 # Changelog
 
+`2023-07-10` - `0.0.11`
+- Added `setupHistory`
+- Added `addHistory`
+- Added `getHistory`
+
 `2023-07-09` - `0.0.10`
 - Fixed `getListItem` not parsing data
 

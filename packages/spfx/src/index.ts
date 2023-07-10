@@ -39,6 +39,9 @@ export { updateListItems } from "./updateListItems";
 export { removeListItem } from "./removeListItem";
 export { attachToListItem } from "./attachToListItem";
 export { sendEmail } from "./sendEmail";
+export { setupHistory, getHistoryOptions } from "./setupHistory";
+export { addHistory } from "./addHistory";
+export { getHistory } from "./getHistory";
 
 // Types
 export type { Person } from "./isPerson";
@@ -53,3 +56,6 @@ export type { GetListItemBaseOptions, GetListItemByIDOptions, GetListItemByPoint
 export type { GetListItemsOptions, GetListItemsResult } from "./getListItems";
 export type { Attachment } from "./getAttachmentFile";
 export type { SendEmailOptions } from "./sendEmail";
+export type { SetupHistoryOptions } from "./setupHistory";
+export type { HistoryChange, AddHistoryOptions, AddHistoryResult } from "./addHistory";
+export type { GetHistoryItem, GetHistoryOptions, GetHistoryResult } from "./getHistory";
