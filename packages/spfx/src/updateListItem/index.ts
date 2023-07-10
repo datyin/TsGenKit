@@ -9,7 +9,7 @@ interface UpdateListItemOptions {
   list: IList | string;
   id: number;
   payload: Record<string, any>;
-  files: AttachToListItemFile[]
+  files?: AttachToListItemFile[]
 }
 
 interface UpdateListItemResult {

@@ -1,5 +1,8 @@
 # Changelog
 
+`2023-07-10` - `0.0.13`
+- Flagged `files` option in `updateListItem` as optional
+
 `2023-07-10` - `0.0.12`
 - Added support for custom message in `HistoryChange`
 
