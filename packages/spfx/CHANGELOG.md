@@ -1,5 +1,8 @@
 # Changelog
 
+`2023-07-10` - `0.0.12`
+- Added support for custom message in `HistoryChange`
+
 `2023-07-10` - `0.0.11`
 - Added `setupHistory`
 - Added `addHistory`

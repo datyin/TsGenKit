@@ -1,7 +1,6 @@
 import { getArray, getString } from "@datyin/core";
 import { errorMessage, getHistoryOptions, getList } from "../index";
 import type { IItem } from "@pnp/sp/items";
-import type { IList } from "@pnp/sp/lists";
 
 interface HistoryChange {
   /**
@@ -23,6 +22,11 @@ interface HistoryChange {
    * The new value
    */
   into?: unknown;
+
+  /**
+   * Additional message
+   */
+  message?: string;
 };
 
 interface AddHistoryOptions {
