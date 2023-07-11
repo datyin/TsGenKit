@@ -19,6 +19,22 @@ function diff(from: unknown, into: unknown): DiffItem[] {
         });
       }
     }
+
+    for (const key in into) {
+      const alreadyMapped = differences.find(difference => difference.path === key);
+
+      if (alreadyMapped) {
+        continue;
+      }
+
+      if (JSON.stringify(key) !== JSON.stringify(from[key])) {
+        differences.push({
+          path: key,
+          from: from[key],
+          into: into[key]
+        });
+      }
+    }
   }
 
   return differences;
