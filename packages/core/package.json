@@ -2,7 +2,7 @@
   "$schema": "https://json.schemastore.org/package",
   "name": "@datyin/core",
   "description": "Core types and utilities",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "type": "module",
   "main": "./dist/index.umd.cjs",
   "module": "./dist/index.js",

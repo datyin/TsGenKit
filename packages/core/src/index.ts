@@ -88,6 +88,9 @@ export { isUUIDArray } from "./isUUIDArray";
 // Modifiers
 export { replaceTokens } from "./replaceTokens";
 
+// Utils
+export { diff } from "./diff";
+
 // Types
 export type { Nullish } from "./isNullish";
 export type { GridSize } from "./isGridSize";
@@ -107,3 +110,5 @@ export type { ToYesNoOptions } from "./toYesNo";
 
 export type { Primitive, Scalars } from "./typePrimitive";
 export type { UserInput } from "./typeUserInput";
+
+export type { DiffItem } from "./diff";
