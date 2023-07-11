@@ -5,7 +5,8 @@ import type { IAttachmentInfo } from "@pnp/sp/attachments";
 
 interface AttachToListItemFile {
   name: string;
-  buffer: string | ArrayBuffer | Blob;
+  buffer?: string | ArrayBuffer | Blob;
+  url?: string;
 };
 
 interface AttachToListItemOptions {
@@ -38,7 +39,12 @@ async function attachToListItem(options: AttachToListItemOptions): Promise<Attac
     for (const file of files) {
       const foundInCurrentFiles = currentFiles.some((f) => f.FileName === file.name);
 
-      if (!foundInCurrentFiles) {
+      if (file.buffer != null) {
+        if (foundInCurrentFiles) {
+          // in order to update existing file, we need to remove it first.
+          toBeRemoved.push(file.name);
+        }
+
         toBeAdded.push(file);
       }
     }

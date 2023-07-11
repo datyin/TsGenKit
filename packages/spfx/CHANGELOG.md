@@ -1,5 +1,8 @@
 # Changelog
 
+`2023-07-11` - `0.0.14`
+- Added support to update files in attachments
+
 `2023-07-10` - `0.0.13`
 - Flagged `files` option in `updateListItem` as optional
 
