@@ -1,5 +1,8 @@
 # Changelog
 
+`2023-07-11` - `0.0.5`
+- Fixed `diff` not comparing correctly on some types
+
 `2023-07-11` - `0.0.4`
 - Added support for removed items search in `diff`
 

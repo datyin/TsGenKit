@@ -6,12 +6,19 @@ interface DiffItem {
   into: unknown;
 };
 
+/**
+ * Return only top level differences between two objects or arrays.
+ * 
+ * @param from the object or array to compare from
+ * @param into the object or array to compare into
+ * @returns an array of differences
+ */
 function diff(from: unknown, into: unknown): DiffItem[] {
   const differences: DiffItem[] = [];
 
   if ((isObject(from) && isObject(into)) || (Array.isArray(from) && Array.isArray(into))) {
     for (const key in from) {
-      if (JSON.stringify(key) !== JSON.stringify(into[key])) {
+      if (JSON.stringify(from[key]) !== JSON.stringify(into[key])) {
         differences.push({
           path: key,
           from: from[key],
@@ -27,13 +34,22 @@ function diff(from: unknown, into: unknown): DiffItem[] {
         continue;
       }
 
-      if (JSON.stringify(key) !== JSON.stringify(from[key])) {
+      if (JSON.stringify(into[key]) !== JSON.stringify(from[key])) {
         differences.push({
           path: key,
           from: from[key],
           into: into[key]
         });
       }
+    }
+  }
+  else {
+    if (JSON.stringify(from) !== JSON.stringify(into)) {
+      differences.push({
+        path: "",
+        from,
+        into
+      });
     }
   }
 
