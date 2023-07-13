@@ -1,13 +1,14 @@
-type ListenerCallback = (data: any) => void;
+type ListenerCallback<T = any> = (data: T) => void;
+type AsyncListenerCallback<T = any> = (data: T) => Promise<void>;
 
 class Emitter {
-  #events: {[key: string]: ListenerCallback[]} = {};
+  #events: {[key: string]: (ListenerCallback | AsyncListenerCallback)[]} = {};
 
   constructor() {
     this.#events = {};
   }
 
-  public on(event: string, listener: ListenerCallback): void {
+  public on<T>(event: string, listener: ListenerCallback<T> | AsyncListenerCallback<T>): void {
     if (!this.#events[event]) {
       this.#events[event] = [];
     }
@@ -15,7 +16,7 @@ class Emitter {
     this.#events[event].push(listener);
   }
 
-  public emit(event: string, data: any): void {
+  public emit<T>(event: string, data: T): void {
     if (!this.#events[event]) {
       return;
     }
@@ -23,7 +24,7 @@ class Emitter {
     this.#events[event].forEach(listener => listener(data));
   }
 
-  public off(event: string, listener: undefined | ListenerCallback = undefined): void {
+  public off(event: string, listener: undefined | ListenerCallback | AsyncListenerCallback = undefined): void {
     if (!this.#events[event]) {
       return;
     }
